@@ -58,6 +58,9 @@ Plug 'fatih/vim-go'
 
 " Comment out code.
 Plug 'scrooloose/nerdcommenter'
+
+" Support .editorconfig files.
+Plug 'sgur/vim-editorconfig'
 call plug#end()
 
 " goimports formats the file AND fixes the imports.
