@@ -61,6 +61,15 @@ Plug 'scrooloose/nerdcommenter'
 
 " Support .editorconfig files.
 Plug 'sgur/vim-editorconfig'
+
+" .jsonnet syntax highlighting.
+Plug 'google/vim-jsonnet'
+
+" .ts syntax highlighting.
+Plug 'leafgarland/typescript-vim'
+
+" LSP.
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 " goimports formats the file AND fixes the imports.
@@ -82,6 +91,10 @@ autocmd Filetype go map <Leader>t :GoAlternate<CR>
 set termguicolors
 colorscheme NeoSolarized
 set background=dark
+
+lua << EOF
+require('lspconfig').gopls.setup({})
+EOF
 
 if has('gui_vimr')
 " Suppress warning in vimr about old version of nvim.
